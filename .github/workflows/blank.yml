@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
     runs-on: self-hosted
     strategy:
       matrix:
-        node_version: ['16']
+        node_version: ["16"]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -33,3 +33,4 @@ jobs:
       - name: npm install
         run: |
           npm i
+          cp . /var/www/html/

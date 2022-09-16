@@ -33,4 +33,4 @@ jobs:
       - name: npm install
         run: |
           npm i
-          echo ${pwd}
+        run: echo "${{ pwd }}"

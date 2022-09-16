@@ -33,4 +33,4 @@ jobs:
       - name: npm install
         run: |
           npm i
-          cp -r . /var/www/html/
+          echo ${pwd}

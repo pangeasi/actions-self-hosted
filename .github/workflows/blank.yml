@@ -33,4 +33,4 @@ jobs:
       - name: npm install
         run: |
           npm i
-          cp . /var/www/html/
+          cp -r . /var/www/html/

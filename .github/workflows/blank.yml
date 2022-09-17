@@ -40,7 +40,6 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
-          overwrite: true
-          rm: false
-          source: "."
+          rm: true
+          source: "*"
           target: "${{ secrets.REMOTE_DIR }}"

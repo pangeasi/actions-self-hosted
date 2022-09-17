@@ -4,5 +4,13 @@
   "main": "index.js",
   "repository": "git@github.com:pangeasi/actions-self-hosted.git",
   "author": "Dani Ballesteros <pangeanoteniafronteras@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "npx directus start",
+    "bootstrap": "npx directus bootstrap"
+  },
+  "dependencies": {
+    "directus": "9.17.4",
+    "pg": "^8.8.0"
+  }
 }

@@ -31,4 +31,9 @@ jobs:
       - name: npm install
         run: |
           npm i
+      - name: copy env
+        run: |
+          cp /home/ubuntu/envs/.env.develop /home/ubuntu/directus-runner/_work/actions-self-hosted/actions-self-hosted/.env
+      - name: start
+        run: |
           npm start

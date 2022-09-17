@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   deploy:
     # The type of runner that the job will run on
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node_version: ["16"]
@@ -33,4 +33,13 @@ jobs:
       - name: npm install
         run: |
           npm i
-      - run: pwd
+      - name: Copying files to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
+          rm: true
+          source: "."
+          target: "${{ secrets.REMOTE_DIR }}"

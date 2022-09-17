@@ -41,5 +41,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           overwrite: true
-          source: "index.html"
+          source: "."
           target: "${{ secrets.REMOTE_DIR }}"

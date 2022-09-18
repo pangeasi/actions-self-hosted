@@ -36,8 +36,9 @@ jobs:
       - name: copy env
         run: |
           cp /home/ubuntu/envs/.env.develop /home/ubuntu/directus-runner/_work/actions-self-hosted/actions-self-hosted/.env
-
+      - name: applying snapshot
+        run: |
+          npm run apply
       - name: start
         run: |
-          npm run bootstrap
-          pm2 start npm --name app -- run start
+          pm2 restart app

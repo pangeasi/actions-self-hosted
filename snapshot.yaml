@@ -13,7 +13,7 @@ collections:
       display_template: null
       group: null
       hidden: false
-      icon: null
+      icon: storefront
       item_duplication_fields: null
       note: null
       singleton: false
@@ -28,30 +28,6 @@ collections:
     schema:
       comment: null
       name: product
-      schema: public
-  - collection: product_files
-    meta:
-      accountability: all
-      archive_app_filter: true
-      archive_field: null
-      archive_value: null
-      collapse: open
-      collection: product_files
-      color: null
-      display_template: null
-      group: null
-      hidden: true
-      icon: import_export
-      item_duplication_fields: null
-      note: null
-      singleton: false
-      sort: null
-      sort_field: null
-      translations: null
-      unarchive_value: null
-    schema:
-      comment: null
-      name: product_files
       schema: public
 fields:
   - collection: product
@@ -70,7 +46,7 @@ fields:
       options: null
       readonly: true
       required: false
-      sort: null
+      sort: 4
       special:
         - date-created
       translations: null
@@ -113,7 +89,7 @@ fields:
       options: null
       readonly: true
       required: false
-      sort: null
+      sort: 5
       special:
         - date-updated
       translations: null
@@ -155,7 +131,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: null
+      sort: 2
       special: null
       translations:
         - language: es-ES
@@ -198,7 +174,7 @@ fields:
       options: null
       readonly: true
       required: false
-      sort: null
+      sort: 6
       special: null
       translations: null
       validation: null
@@ -225,50 +201,6 @@ fields:
       table: product
     type: integer
   - collection: product
-    field: main_picture
-    meta:
-      collection: product
-      conditions: null
-      display: null
-      display_options: null
-      field: main_picture
-      group: null
-      hidden: false
-      interface: file-image
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: null
-      special:
-        - file
-      translations:
-        - language: es-ES
-          translation: Imágen principal
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      comment: null
-      data_type: uuid
-      default_value: null
-      foreign_key_column: id
-      foreign_key_schema: public
-      foreign_key_table: directus_files
-      generation_expression: null
-      has_auto_increment: false
-      is_generated: false
-      is_nullable: true
-      is_primary_key: false
-      is_unique: false
-      max_length: null
-      name: main_picture
-      numeric_precision: null
-      numeric_scale: null
-      schema: public
-      table: product
-    type: uuid
-  - collection: product
     field: name
     meta:
       collection: product
@@ -280,11 +212,10 @@ fields:
       hidden: false
       interface: input
       note: null
-      options:
-        placeholder: $t:product_name_placeholder
+      options: null
       readonly: false
       required: true
-      sort: null
+      sort: 1
       special: null
       translations:
         - language: es-ES
@@ -313,31 +244,48 @@ fields:
       table: product
     type: string
   - collection: product
-    field: pictures
+    field: price
     meta:
       collection: product
-      conditions: []
+      conditions: null
       display: null
       display_options: null
-      field: pictures
+      field: price
       group: null
       hidden: false
-      interface: files
+      interface: input
       note: null
       options: null
       readonly: false
       required: false
-      sort: null
-      special:
-        - files
+      sort: 3
+      special: null
       translations:
         - language: es-ES
-          translation: Imágenes
+          translation: Precio
       validation: null
       validation_message: null
       width: full
-    schema: null
-    type: alias
+    schema:
+      comment: null
+      data_type: numeric
+      default_value: 0
+      foreign_key_column: null
+      foreign_key_schema: null
+      foreign_key_table: null
+      generation_expression: null
+      has_auto_increment: false
+      is_generated: false
+      is_nullable: true
+      is_primary_key: false
+      is_unique: false
+      max_length: null
+      name: price
+      numeric_precision: 10
+      numeric_scale: 5
+      schema: public
+      table: product
+    type: decimal
   - collection: product
     field: sort
     meta:
@@ -353,7 +301,7 @@ fields:
       options: null
       readonly: false
       required: false
-      sort: null
+      sort: 7
       special: null
       translations: null
       validation: null
@@ -415,7 +363,7 @@ fields:
             value: archived
       readonly: false
       required: false
-      sort: null
+      sort: 8
       special: null
       translations: null
       validation: null
@@ -457,7 +405,7 @@ fields:
         template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
       readonly: true
       required: false
-      sort: null
+      sort: 9
       special:
         - user-created
       translations: null
@@ -500,7 +448,7 @@ fields:
         template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
       readonly: true
       required: false
-      sort: null
+      sort: 10
       special:
         - user-updated
       translations: null
@@ -527,152 +475,7 @@ fields:
       schema: public
       table: product
     type: uuid
-  - collection: product_files
-    field: directus_files_id
-    meta:
-      collection: product_files
-      conditions: null
-      display: null
-      display_options: null
-      field: directus_files_id
-      group: null
-      hidden: true
-      interface: null
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: null
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      comment: null
-      data_type: uuid
-      default_value: null
-      foreign_key_column: id
-      foreign_key_schema: public
-      foreign_key_table: directus_files
-      generation_expression: null
-      has_auto_increment: false
-      is_generated: false
-      is_nullable: true
-      is_primary_key: false
-      is_unique: false
-      max_length: null
-      name: directus_files_id
-      numeric_precision: null
-      numeric_scale: null
-      schema: public
-      table: product_files
-    type: uuid
-  - collection: product_files
-    field: id
-    meta:
-      collection: product_files
-      conditions: null
-      display: null
-      display_options: null
-      field: id
-      group: null
-      hidden: true
-      interface: null
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: null
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      comment: null
-      data_type: integer
-      default_value: nextval('product_files_id_seq'::regclass)
-      foreign_key_column: null
-      foreign_key_schema: null
-      foreign_key_table: null
-      generation_expression: null
-      has_auto_increment: true
-      is_generated: false
-      is_nullable: false
-      is_primary_key: true
-      is_unique: true
-      max_length: null
-      name: id
-      numeric_precision: 32
-      numeric_scale: 0
-      schema: public
-      table: product_files
-    type: integer
-  - collection: product_files
-    field: product_id
-    meta:
-      collection: product_files
-      conditions: null
-      display: null
-      display_options: null
-      field: product_id
-      group: null
-      hidden: true
-      interface: null
-      note: null
-      options: null
-      readonly: false
-      required: false
-      sort: null
-      special: null
-      translations: null
-      validation: null
-      validation_message: null
-      width: full
-    schema:
-      comment: null
-      data_type: integer
-      default_value: null
-      foreign_key_column: id
-      foreign_key_schema: public
-      foreign_key_table: product
-      generation_expression: null
-      has_auto_increment: false
-      is_generated: false
-      is_nullable: true
-      is_primary_key: false
-      is_unique: false
-      max_length: null
-      name: product_id
-      numeric_precision: 32
-      numeric_scale: 0
-      schema: public
-      table: product_files
-    type: integer
 relations:
-  - collection: product
-    field: main_picture
-    meta:
-      junction_field: null
-      many_collection: product
-      many_field: main_picture
-      one_allowed_collections: null
-      one_collection: directus_files
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: null
-      sort_field: null
-    related_collection: directus_files
-    schema:
-      column: main_picture
-      constraint_name: product_main_picture_foreign
-      foreign_key_column: id
-      foreign_key_schema: public
-      foreign_key_table: directus_files
-      on_delete: SET NULL
-      on_update: NO ACTION
-      table: product
   - collection: product
     field: user_created
     meta:
@@ -717,47 +520,3 @@ relations:
       on_delete: NO ACTION
       on_update: NO ACTION
       table: product
-  - collection: product_files
-    field: directus_files_id
-    meta:
-      junction_field: product_id
-      many_collection: product_files
-      many_field: directus_files_id
-      one_allowed_collections: null
-      one_collection: directus_files
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: null
-      sort_field: null
-    related_collection: directus_files
-    schema:
-      column: directus_files_id
-      constraint_name: product_files_directus_files_id_foreign
-      foreign_key_column: id
-      foreign_key_schema: public
-      foreign_key_table: directus_files
-      on_delete: SET NULL
-      on_update: NO ACTION
-      table: product_files
-  - collection: product_files
-    field: product_id
-    meta:
-      junction_field: directus_files_id
-      many_collection: product_files
-      many_field: product_id
-      one_allowed_collections: null
-      one_collection: product
-      one_collection_field: null
-      one_deselect_action: nullify
-      one_field: pictures
-      sort_field: null
-    related_collection: product
-    schema:
-      column: product_id
-      constraint_name: product_files_product_id_foreign
-      foreign_key_column: id
-      foreign_key_schema: public
-      foreign_key_table: product
-      on_delete: SET NULL
-      on_update: NO ACTION
-      table: product_files

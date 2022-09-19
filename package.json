@@ -8,7 +8,7 @@
   "scripts": {
     "start": "npx directus start",
     "bootstrap": "npx directus bootstrap",
-    "apply": "npx directus schema apply ./snapshot.yaml"
+    "apply": "npx directus schema apply -y ./snapshot.yaml"
   },
   "dependencies": {
     "directus": "9.17.4",
